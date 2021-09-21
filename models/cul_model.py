@@ -1,3 +1,6 @@
+import requests
+
+
 class Culture:
     def __init__(self):
         self.svcid
@@ -20,4 +23,5 @@ class CulService:
         base_url = 'http://openAPI.seoul.go.kr:8088/'
         api_key='4c4c556a567375693633667243655a'
         url=base_url+api_key+'/xml/ListPublicReservationCulture/1/200/'
+        xml = requests.get(url).text
 
