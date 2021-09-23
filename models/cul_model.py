@@ -26,5 +26,6 @@ class CulService:
         url=base_url+api_key+'/xml/ListPublicReservationCulture/1/200/'
         xml = requests.get(url).text
         root = BeautifulSoup(xml).text
+        data = root.select()
 
 
