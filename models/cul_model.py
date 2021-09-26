@@ -28,6 +28,12 @@ class CulService:
         url=self.base_url+self.api_key+'/xml/ListPublicReservationCulture/1/200/'
         xml = requests.get(url).text
         root = BeautifulSoup(xml, 'lxml-xml').text
-        rows = root.select('row')
+        code = root.find('CODE').get_text()
+        if code == 'INFO-000':
+            rows = root.select('row')
+        else:
+            print(root.find('RESULT').text)
+
+
 
 
