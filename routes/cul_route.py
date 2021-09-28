@@ -26,3 +26,7 @@ def getByKeyword():
     culList = service.getByKeyword(keyword)
     return render_template('culture/list.html', culList=culList)
 
+@bp.route('/map')
+def getMap():
+    return render_template('culture/map.html')
+
