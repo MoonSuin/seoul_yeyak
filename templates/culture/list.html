@@ -52,8 +52,10 @@
         <th>행사장소</th>
         <th>이용대상</th>
         <th>이미지</th>
-        <th>좌표</th>
     </tr>
+    {%if culList|length == 0%}
+    <tr><th colspan="8">조회가능한 문화행사가 없습니다.</th></tr>
+    {%endif%}
     {%for c in culList%}
     <tr>
         <th>{{loop.index}}</th>
@@ -63,7 +65,6 @@
         <th>{{c.payAtNm}}</th>
         <th>{{c.placeNm}}</th>
         <th>{{c.useTgtInfo}}</th>
-        <th>{{c.x}},{{c.y}}</th>
         <th><img src={{c.imgUrl}} height="30px", width="30px"></th>
     </tr>
     {%endfor%}

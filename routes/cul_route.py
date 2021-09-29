@@ -22,7 +22,7 @@ def getOngoing():
 
 @bp.route('/map')
 def getMap():
-    culList = service.getByGeo()
+    culList = service.getList()
     return render_template('culture/mapK.html', culList=culList)
 
 @bp.route('/search', methods=['POST'])
