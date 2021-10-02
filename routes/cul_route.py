@@ -32,7 +32,3 @@ def search():
     culList = service.getByCondition(condition, keyword)
     return render_template('culture/list.html', culList=culList)
 
-@bp.route('/empty')
-def emptyList():
-    eList = []
-    return render_template('culture/emptyList.html', eList = eList)
